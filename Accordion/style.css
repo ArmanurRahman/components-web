@@ -1,0 +1,92 @@
+/*
+MAIN_COLOR: #087f5b
+GRAY_COLOR: #343a40
+*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Inter", sans-serif;
+    color: #343a40;
+}
+.accordion {
+    width: 600px;
+    margin: 5rem auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.item {
+    box-shadow: 0 0 32px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    column-gap: 1.5rem;
+    row-gap: 2rem;
+}
+.number,
+.title {
+    font-size: 20px;
+    color: #ced4da;
+    font-weight: 500;
+}
+.title {
+    color: #495057;
+}
+.detail {
+    grid-column: 2/3;
+
+    display: none;
+}
+.detail p {
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+.detail ul {
+    color: #868e96;
+    margin-left: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.icon {
+    width: 24px;
+    height: 24px;
+    stroke: #087f5b;
+    pointer-events: none;
+}
+.open {
+    border-top: 4px solid #087f5b;
+    animation: fade-in 0.5s;
+    transform-origin: top;
+}
+.open .detail {
+    display: block;
+}
+.open .number,
+.open .title {
+    color: #087f5b;
+}
+.close {
+    animation: fade-out 0.5s;
+}
+
+@keyframes fade-in {
+    from {
+        transform: scaleY(0);
+    }
+    to {
+        transform: scaleY(1);
+    }
+}
+@keyframes fade-out {
+    from {
+        transform: scaleY(1);
+    }
+    to {
+        transform: scaleY(0);
+    }
+}
